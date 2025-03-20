@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://l45xqoly3iwr"]
+
+[ext_resource type="Texture2D" uid="uid://cygv6va07a827" path="res://assets/player_idle-01.png" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://pprymfll6xm8" path="res://assets/player_idle-02.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://2hytw5mf332" path="res://assets/player_idle-03.png" id="3_sweqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="player" type="Area2D"]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2hs0m")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.399201
